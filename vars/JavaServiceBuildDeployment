@@ -24,7 +24,7 @@ pipeline {
            echo ${config.application}
      
             '''
-            def subFunction = new ()
+            def subFunction = new javaServiceSubFunction()
             
          }
       }
