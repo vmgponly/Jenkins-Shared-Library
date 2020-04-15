@@ -21,12 +21,12 @@ pipeline {
             script
              {    
                def subFunction = new javaServiceSubFunction()
-             }
+             
           sh '''
              echo ${config.service_name}
              echo ${config.application}
                  '''
-       
+             }
             
          }
       }
