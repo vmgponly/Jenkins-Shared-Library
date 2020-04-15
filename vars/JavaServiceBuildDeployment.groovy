@@ -20,11 +20,7 @@ pipeline {
          steps {
             script
              {    
-               sh '''
-                 echo ${config.service_name}
-                 echo ${config.application}
-                 '''
-            def subFunction = new javaServiceSubFunction()
+               def subFunction = new javaServiceSubFunction()
              }        
             
          }
