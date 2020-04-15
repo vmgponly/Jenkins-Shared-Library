@@ -28,11 +28,11 @@ pipeline {
       }
            stage('Test'){
                    steps {
-                    sh '''
-             echo ${config.service_name}
-             echo ${config.application}
-                 '''
-       
+                           script {
+                      println config.service_name
+                      println config.application
+                      
+                                 }
                    }
            }
            
