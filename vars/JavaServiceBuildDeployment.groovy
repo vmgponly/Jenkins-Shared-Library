@@ -18,13 +18,14 @@ pipeline {
    stages {
       stage('Build') {
          steps {
-            
-            sh '''
-           echo ${config.service_name}
-           echo ${config.application}
-     
-            '''
+            script
+             {    
+               sh '''
+                 echo ${config.service_name}
+                 echo ${config.application}
+                 '''
             def subFunction = new javaServiceSubFunction()
+             }        
             
          }
       }
