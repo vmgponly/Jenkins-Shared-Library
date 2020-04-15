@@ -2,7 +2,8 @@
 
 def javaServiceSubFunction()
 {
-  sh '''
-  echo "This is test"
-  '''
+  script
+  {
+   println "this is test" 
+  }  
 }
