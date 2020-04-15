@@ -22,14 +22,20 @@ pipeline {
              {    
                def subFunction = new javaServiceSubFunction()
              
-          sh '''
-             echo ${config.service_name}
-             echo ${config.application}
-                 '''
              }
             
          }
       }
+           stage('Test'){
+                   steps {
+                    sh '''
+             echo ${config.service_name}
+             echo ${config.application}
+                 '''
+       
+                   }
+           }
+           
    }
  }
 }
