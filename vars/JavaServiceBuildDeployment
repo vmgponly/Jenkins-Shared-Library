@@ -1,0 +1,33 @@
+def call(body) {
+
+        def config = [:]
+        body.resolveStrategy = Closure.DELEGATE_FIRST
+        body.delegate = config
+        body()
+
+pipeline {
+   agent any
+   tools
+   {
+       
+       maven 'maven'
+       nodejs 'node'
+       
+   }
+
+   stages {
+      stage('Build') {
+         steps {
+            echo 'Hello World'
+            sh '''
+            mvn -version
+            node --version
+            npm --version
+            
+            '''
+            
+         }
+      }
+   }
+ }
+}
